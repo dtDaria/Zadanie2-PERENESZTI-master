@@ -1,0 +1,42 @@
+body {
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #292b2c;
+}
+
+.container{
+    margin-top: 10px;
+    background: rgba(216, 220, 250, 0.84);
+    border-radius: 5px;
+    width: 410px;
+    height: auto;
+
+}
+.note{
+    height: 100px;
+    background: rgba(216, 227, 252, 0.84);
+    border-radius: 5px;
+    width: 410px;
+    height: auto;
+    display: inline-flex;
+    list-style: none;
+    padding: 0;
+}
+.notes{
+    margin-left: 10px;
+    padding: 9px;
+    display: flex;
+}
+.submit{
+    display: inline-flex;
+    margin-top: 30px;
+    margin-left: 100px;
+}
+.glob-list{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+
+}
