@@ -44,6 +44,13 @@ Vue.component('note_column', {
             <column class="note" :indexColumn="indexColumn2" :name="name2" :col="note_column[1]" @changeTask="changeTask"></column>
             <column class="note" :indexColumn="indexColumn3" :name="name3" :col="note_column[2]" @changeTask="changeTask"></column>
         </div>
+        <div class="notes">
+                    <label for="name">Название:</label>
+                    <input required id="name" v-model="name" type="text">
+        </div>
+                    
+                    
+                
     `,
     data() {
         return {
@@ -241,11 +248,16 @@ Vue.component('creating-notes', {
                     <label for="notes4">Запись 4:</label>
                     <input id="notes4" v-model="notes4" type="text">
                 </div>
+                <div class="notes">
+                    <label for="notes5">Запись 5:</label>
+                    <input id="notes5" v-model="notes5" type="text">
+                </div>
                 <input  type="submit" value="Сохранить" class="submit">
             </div>
             </form>
         </div>
     `,
+
     data() {
         return {
             name: null,
@@ -254,6 +266,7 @@ Vue.component('creating-notes', {
             notes2: null,
             notes3: null,
             notes4: null,
+            notes5: null,
             id: 1,
             cDone: 0,  // выполнено
             errors: 0,
@@ -268,6 +281,7 @@ Vue.component('creating-notes', {
                 this.notes2,
                 this.notes3,
                 this.notes4,
+                this.notes5,
             )
             this.length = this.length.filter(Boolean);
             if (this.length.length > 2) {
@@ -290,6 +304,10 @@ Vue.component('creating-notes', {
                             notes: this.notes4,
                             done: false
                         },
+                        {
+                            notes: this.notes5,
+                            done: false
+                        },
                     ],
                     data:null,
                     id: this.id,
@@ -303,12 +321,16 @@ Vue.component('creating-notes', {
                 this.notes2 = null
                 this.notes3 = null
                 this.notes4 = null
+                this.notes5 = null
+
                 this.CheckLength()
 
-            } else {
+            }
+            else {
                 this.errors = 1
                 this.CheckLength()
             }
+
         },
         idIncr() {
             this.id++
@@ -328,7 +350,6 @@ Vue.component('creating-notes', {
         }
     }
 })
-
 let app = new Vue({
     el: '#app',
     methods: {},
